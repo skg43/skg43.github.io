@@ -18,11 +18,11 @@ const projects = [
     linkLabel: "Read preprint",
   },
   {
-    eyebrow: "Data-driven modeling",
-    title: "Two-liquid phase separation at surfaces",
+    eyebrow: "Interfacial phenomena",
+    title: "Phase separation and wetting at interfaces",
     description:
-      "Automated simulation sweeps and interpretable machine-learning models for mapping phase behavior, wetting states, and morphology from molecular interaction parameters.",
-    tags: ["Random forest", "Phase separation", "Automation", "Scientific ML"],
+      "Using molecular simulations, parameter sweeps, and machine-learning analysis to study phase separation and wetting, with potential relevance to materials design, formulation, and delivery systems.",
+    tags: ["Phase separation", "Wetting", "Parameter sweeps", "Machine learning"],
   },
   {
     eyebrow: "Molecular machine learning",
