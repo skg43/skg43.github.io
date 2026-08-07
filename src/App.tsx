@@ -122,19 +122,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="current-research" aria-labelledby="current-research-title">
-        <div>
-          <p className="note-label">Current research</p>
-          <h2 id="current-research-title">Membrane and vesicle mechanics</h2>
-          <p>How osmotic stress and molecular interactions influence vesicle shape, phase behavior, and interfacial phenomena, with potential applications in therapeutic delivery.</p>
-        </div>
-        <ul>
-          <li><span>01</span>Molecular simulation</li>
-          <li><span>02</span>Statistical-mechanical models</li>
-          <li><span>03</span>Automated analysis and classification</li>
-        </ul>
-      </section>
-
       <section className="signal-strip" aria-label="Professional focus">
         <span>Biomolecular simulation</span><i>•</i>
         <span>Membranes & vesicles</span><i>•</i>
