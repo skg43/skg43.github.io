@@ -111,17 +111,28 @@ export default function Home() {
             <a className="button button-secondary" href="./Sanjeev_Gautam_Resume.pdf" target="_blank" rel="noreferrer">View résumé <span>↗</span></a>
           </div>
         </div>
-        <div className="research-note">
-          <p className="note-label">Current research</p>
-          <h2>Membrane and vesicle mechanics</h2>
-          <p>How osmotic stress and molecular interactions influence vesicle shape, phase behavior, and interfacial phenomena.</p>
-          <ul>
-            <li><span>01</span>Molecular simulation</li>
-            <li><span>02</span>Statistical-mechanical models</li>
-            <li><span>03</span>Automated analysis and classification</li>
-          </ul>
-          <small>Potential applications include therapeutic delivery.</small>
+        <div className="molecular-visual" aria-label="Stylized molecular simulation graphic">
+          <div className="orbit orbit-one"><span /></div>
+          <div className="orbit orbit-two"><span /></div>
+          <div className="orbit orbit-three"><span /></div>
+          <div className="core"><strong>MD</strong><small>+ DATA</small></div>
+          <div className="visual-label label-one">MEMBRANES</div>
+          <div className="visual-label label-two">MECHANICS</div>
+          <div className="visual-label label-three">TRANSPORT</div>
         </div>
+      </section>
+
+      <section className="current-research" aria-labelledby="current-research-title">
+        <div>
+          <p className="note-label">Current research</p>
+          <h2 id="current-research-title">Membrane and vesicle mechanics</h2>
+          <p>How osmotic stress and molecular interactions influence vesicle shape, phase behavior, and interfacial phenomena, with potential applications in therapeutic delivery.</p>
+        </div>
+        <ul>
+          <li><span>01</span>Molecular simulation</li>
+          <li><span>02</span>Statistical-mechanical models</li>
+          <li><span>03</span>Automated analysis and classification</li>
+        </ul>
       </section>
 
       <section className="signal-strip" aria-label="Professional focus">
@@ -171,6 +182,10 @@ export default function Home() {
 
       <section className="section about" id="about">
         <div className="about-intro">
+          <figure className="profile-card">
+            <img src="./sanjeev-gautam-profile.png" alt="Sanjeev Gautam smiling in front of a scientific whiteboard" />
+            <figcaption>Sanjeev Gautam, Ph.D. · Postdoctoral Fellow</figcaption>
+          </figure>
           <p className="eyebrow">What I bring</p>
           <h2>From physical models to reproducible analysis.</h2>
           <p>My work combines theory, simulation, and data analysis. I am most comfortable on projects where the scientific question determines the method.</p>
