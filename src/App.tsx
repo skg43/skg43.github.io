@@ -85,7 +85,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Sanjeev Gautam, home">
-          SG<span>.</span>
+          Sanjeev Gautam<span>.</span>
         </a>
         <nav aria-label="Primary navigation">
           <a href="#work">Work</a>
