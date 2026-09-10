@@ -307,7 +307,7 @@ h1 {
   height: auto;
 }
 .compact-media {
-  width: min(76%, 360px);
+  width: min(61%, 288px);
   justify-self: center;
 }
 .case-media figcaption {
