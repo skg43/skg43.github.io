@@ -183,7 +183,7 @@ export default function Home() {
         <div className="hero-copy">
           <div className="status"><span />Open to computational R&D opportunities</div>
           <p className="kicker">Computational chemistry / Molecular simulation / Bio-oriented R&D</p>
-          <h1>I build molecular models for transport, membranes, and data-driven discovery.</h1>
+          <h1>I build molecular models and data workflows for complex chemical and biological systems.</h1>
           <p className="hero-summary">
             I am a computational scientist with a Ph.D. in computational chemistry
             and postdoctoral work on membrane and soft-matter systems. I use
