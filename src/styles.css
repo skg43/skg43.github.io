@@ -269,7 +269,6 @@ h1 {
   perspective: 1200px;
 }
 .featured-case {
-  position: relative;
   display: grid;
   grid-template-columns: minmax(300px, .82fr) minmax(0, 1fr);
   gap: 32px;
@@ -280,30 +279,20 @@ h1 {
   border-left: 5px solid var(--line-strong);
   border-radius: 6px;
   box-shadow:
-    0 18px 34px rgba(18, 34, 29, .08),
-    0 3px 0 rgba(154, 168, 158, .34);
+    0 20px 45px rgba(18, 34, 29, .1),
+    0 1px 0 rgba(255, 255, 255, .8) inset;
   transform: translateZ(0);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 .featured-case:last-child {
   padding-bottom: 24px;
 }
-.featured-case:after,
-.project-row:after {
-  content: "";
-  position: absolute;
-  inset: 8px -7px -7px 8px;
-  z-index: -1;
-  border-radius: inherit;
-  background: rgba(20, 62, 55, .08);
-  border: 1px solid rgba(154, 168, 158, .35);
-}
 .featured-case:hover {
   border-color: var(--line-strong);
   box-shadow:
-    0 26px 46px rgba(18, 34, 29, .13),
-    0 5px 0 rgba(154, 168, 158, .46);
-  transform: translateY(-3px) rotateX(.6deg);
+    0 26px 55px rgba(18, 34, 29, .14),
+    0 1px 0 rgba(255, 255, 255, .86) inset;
+  transform: translateY(-2px);
 }
 .case-media {
   margin: 0;
@@ -388,7 +377,6 @@ h1 {
   text-transform: uppercase;
 }
 .project-row {
-  position: relative;
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
   gap: 24px;
@@ -398,17 +386,17 @@ h1 {
   border-radius: 6px;
   background: #fffdf8;
   box-shadow:
-    0 14px 28px rgba(18, 34, 29, .065),
-    0 2px 0 rgba(154, 168, 158, .28);
+    0 12px 28px rgba(18, 34, 29, .07),
+    0 1px 0 rgba(255, 255, 255, .82) inset;
   transform: translateZ(0);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 .project-row:hover {
   border-color: var(--line-strong);
   box-shadow:
-    0 20px 36px rgba(18, 34, 29, .11),
-    0 4px 0 rgba(154, 168, 158, .42);
-  transform: translateY(-2px) rotateX(.45deg);
+    0 18px 36px rgba(18, 34, 29, .11),
+    0 1px 0 rgba(255, 255, 255, .88) inset;
+  transform: translateY(-2px);
 }
 .project-row > span {
   color: var(--olive);
