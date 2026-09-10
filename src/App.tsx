@@ -26,6 +26,25 @@ type SectionKey = "work" | "capabilities" | "experience" | "publications";
 
 const projects: Project[] = [
   {
+    area: "Membranes",
+    title: "Osmotic shape transitions in vesicles",
+    description:
+      "Studied how osmotic conditions change vesicle morphology by combining coarse-grained molecular dynamics with thermodynamic and membrane-mechanics models.",
+    methods: "Coarse-grained MD, LAMMPS, statistical mechanics",
+    question: "How do osmotic conditions affect membrane-vesicle shape and stability?",
+    media: {
+      type: "image",
+      src: "./media/osmotic-morphology-sequence.png",
+      alt: "Sequence of simulated vesicle morphologies as the external osmolyte number increases",
+      caption: "Simulated morphology sequence with increasing external osmolyte number.",
+    },
+    featured: true,
+    href: "https://doi.org/10.64898/2026.04.03.716363",
+    linkLabel: "Read preprint",
+    videoHref: "./media/vesicle-shape-transitions.mp4",
+    videoLabel: "Watch simulation",
+  },
+  {
     area: "Transport",
     title: "Transport through the nuclear pore complex",
     description:
@@ -50,25 +69,6 @@ const projects: Project[] = [
     methods: "RDKit, scikit-learn, QSAR",
     href: "https://github.com/skg43/EGFR_RF_Modeling",
     linkLabel: "View code",
-  },
-  {
-    area: "Membranes",
-    title: "Osmotic shape transitions in vesicles",
-    description:
-      "Studied how osmotic conditions change vesicle morphology by combining coarse-grained molecular dynamics with thermodynamic and membrane-mechanics models.",
-    methods: "Coarse-grained MD, LAMMPS, statistical mechanics",
-    question: "How do osmotic conditions affect membrane-vesicle shape and stability?",
-    media: {
-      type: "image",
-      src: "./media/osmotic-morphology-sequence.png",
-      alt: "Sequence of simulated vesicle morphologies as the external osmolyte number increases",
-      caption: "Simulated morphology sequence with increasing external osmolyte number.",
-    },
-    featured: true,
-    href: "https://doi.org/10.64898/2026.04.03.716363",
-    linkLabel: "Read preprint",
-    videoHref: "./media/vesicle-shape-transitions.mp4",
-    videoLabel: "Watch simulation",
   },
   {
     area: "Soft matter",

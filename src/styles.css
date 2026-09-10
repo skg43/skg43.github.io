@@ -265,21 +265,21 @@ h1 {
 .work-layout { display: grid; gap: 18px; }
 .featured-stack {
   display: grid;
-  gap: 30px;
+  gap: 18px;
 }
 .featured-case {
   display: grid;
   grid-template-columns: minmax(300px, .82fr) minmax(0, 1fr);
   gap: 32px;
   align-items: center;
-  padding: 0 0 26px;
-  background: transparent;
-  border: 0;
-  border-bottom: 2px solid var(--line-strong);
-  border-radius: 0;
+  padding: 24px;
+  background: #fbfaf5;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--line-strong);
+  border-radius: 6px;
 }
 .featured-case:last-child {
-  padding-bottom: 28px;
+  padding-bottom: 24px;
 }
 .case-media {
   margin: 0;
@@ -347,18 +347,17 @@ h1 {
 .project-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
-  border-top: 2px solid var(--line-strong);
+  gap: 12px;
 }
 .project-row {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
   gap: 24px;
-  padding: 22px 0;
-  border: 0;
-  border-bottom: 2px solid var(--line-strong);
-  border-radius: 0;
-  background: transparent;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-left: 4px solid #c3cec6;
+  border-radius: 6px;
+  background: #fffdf8;
 }
 .project-row > span {
   color: var(--olive);
