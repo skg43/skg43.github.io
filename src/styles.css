@@ -293,6 +293,10 @@ h1 {
   width: 100%;
   height: auto;
 }
+.compact-media {
+  width: min(76%, 360px);
+  justify-self: center;
+}
 .case-media figcaption {
   margin: 0;
   padding: 10px 12px;

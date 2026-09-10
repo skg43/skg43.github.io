@@ -253,7 +253,7 @@ export default function Home() {
                   {featuredProjects.map((project) => (
                     <article className="featured-case" key={project.title}>
                       {project.media && (
-                        <figure className="case-media">
+                        <figure className={`case-media${project.title.includes("Thioamide") ? " compact-media" : ""}`}>
                           <img src={project.media.src} alt={project.media.alt} loading="lazy" />
                           {project.media.caption && <figcaption>{project.media.caption}</figcaption>}
                         </figure>
