@@ -5,6 +5,7 @@
   --surface-strong: #eef1e2;
   --muted: #5d675e;
   --line: #d7d8ca;
+  --line-strong: #9aa89e;
   --olive: #0a6254;
   --olive-dark: #143e37;
   --moss: #dce7df;
@@ -264,7 +265,7 @@ h1 {
 .work-layout { display: grid; gap: 18px; }
 .featured-stack {
   display: grid;
-  gap: 26px;
+  gap: 30px;
 }
 .featured-case {
   display: grid;
@@ -274,7 +275,7 @@ h1 {
   padding: 0 0 26px;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 2px solid var(--line-strong);
   border-radius: 0;
 }
 .featured-case:last-child {
@@ -347,6 +348,7 @@ h1 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
+  border-top: 2px solid var(--line-strong);
 }
 .project-row {
   display: grid;
@@ -354,7 +356,7 @@ h1 {
   gap: 24px;
   padding: 22px 0;
   border: 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 2px solid var(--line-strong);
   border-radius: 0;
   background: transparent;
 }

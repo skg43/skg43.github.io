@@ -175,7 +175,6 @@ export default function Home() {
           SG<span>.</span>
         </a>
         <div className="header-actions">
-          <a href="./Sanjeev_Gautam_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
           <a className="header-cta" href="#contact">Let's talk</a>
         </div>
       </header>
