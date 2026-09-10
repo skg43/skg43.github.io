@@ -304,7 +304,11 @@ h1 {
 }
 .board-panel { padding: 34px; }
 
-.work-layout { display: grid; gap: 14px; }
+.work-layout { display: grid; gap: 18px; }
+.featured-stack {
+  display: grid;
+  gap: 26px;
+}
 .featured-case {
   display: grid;
   grid-template-columns: minmax(300px, .82fr) minmax(0, 1fr);
@@ -315,6 +319,9 @@ h1 {
   border: 0;
   border-bottom: 1px solid var(--line);
   border-radius: 0;
+}
+.featured-case:last-child {
+  padding-bottom: 28px;
 }
 .case-media {
   margin: 0;

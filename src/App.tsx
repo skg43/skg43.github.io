@@ -13,6 +13,7 @@ type Project = {
   title: string;
   description: string;
   methods: string;
+  question?: string;
   href?: string;
   linkLabel?: string;
   media?: ProjectMedia;
@@ -24,6 +25,23 @@ type Project = {
 type SectionKey = "work" | "capabilities" | "experience" | "publications";
 
 const projects: Project[] = [
+  {
+    area: "Transport",
+    title: "Transport through the nuclear pore complex",
+    description:
+      "My Ph.D. work used coarse-grained molecular dynamics and trajectory-analysis tools to study diffusion, selectivity, molecular organization, and transport pathways in the nuclear pore complex.",
+    methods: "Coarse-grained MD, Python, HPC",
+    question: "How do weak interactions and spatial organization regulate selective transport?",
+    media: {
+      type: "image",
+      src: "./media/npc-transport-model.png",
+      alt: "Coarse-grained nuclear pore complex transport model with crowded proteins and transport cargo",
+      caption: "Coarse-grained model used to study transport through the nuclear pore complex.",
+    },
+    featured: true,
+    href: "https://doi.org/10.64898/2026.02.23.707554",
+    linkLabel: "Read preprint",
+  },
   {
     area: "Cheminformatics",
     title: "EGFR inhibitor activity modeling",
@@ -39,6 +57,7 @@ const projects: Project[] = [
     description:
       "Studied how osmotic conditions change vesicle morphology by combining coarse-grained molecular dynamics with thermodynamic and membrane-mechanics models.",
     methods: "Coarse-grained MD, LAMMPS, statistical mechanics",
+    question: "How do osmotic conditions affect membrane-vesicle shape and stability?",
     media: {
       type: "image",
       src: "./media/osmotic-morphology-sequence.png",
@@ -57,15 +76,6 @@ const projects: Project[] = [
     description:
       "Use simulation campaigns and analysis workflows to connect composition, interaction strength, morphology, and interfacial behavior.",
     methods: "Parameter sweeps, wetting, ML analysis",
-  },
-  {
-    area: "Transport",
-    title: "Transport through the nuclear pore complex",
-    description:
-      "Developed coarse-grained models and trajectory-analysis tools to study diffusion, selectivity, molecular organization, and transport pathways in the nuclear pore complex.",
-    methods: "Coarse-grained MD, Python, HPC",
-    href: "https://doi.org/10.64898/2026.02.23.707554",
-    linkLabel: "Read preprint",
   },
   {
     area: "Molecular structure",
@@ -163,7 +173,7 @@ const sections: { key: SectionKey; label: string; eyebrow: string; summary: stri
 export default function Home() {
   const [activeSection, setActiveSection] = useState<SectionKey>("work");
   const activeMeta = sections.find((section) => section.key === activeSection)!;
-  const featuredProject = projects.find((project) => project.featured)!;
+  const featuredProjects = projects.filter((project) => project.featured);
   const remainingProjects = projects.filter((project) => !project.featured);
 
   return (
@@ -265,27 +275,31 @@ export default function Home() {
           >
             {activeSection === "work" && (
               <div className="work-layout">
-                <article className="featured-case">
-                  {featuredProject.media && (
-                    <figure className="case-media">
-                      <img src={featuredProject.media.src} alt={featuredProject.media.alt} loading="lazy" />
-                      {featuredProject.media.caption && <figcaption>{featuredProject.media.caption}</figcaption>}
-                    </figure>
-                  )}
-                  <div>
-                    <p className="project-area">{featuredProject.area}</p>
-                    <h3>{featuredProject.title}</h3>
-                    <p>{featuredProject.description}</p>
-                    <dl className="project-meta">
-                      <div><dt>Question</dt><dd>How do osmotic conditions affect membrane-vesicle shape and stability?</dd></div>
-                      <div><dt>Methods</dt><dd>{featuredProject.methods}</dd></div>
-                    </dl>
-                    <div className="project-actions">
-                      {featuredProject.href && <a href={featuredProject.href} target="_blank" rel="noreferrer">{featuredProject.linkLabel} ↗</a>}
-                      {featuredProject.videoHref && <a href={featuredProject.videoHref} target="_blank" rel="noreferrer">{featuredProject.videoLabel} ▶</a>}
-                    </div>
-                  </div>
-                </article>
+                <div className="featured-stack">
+                  {featuredProjects.map((project) => (
+                    <article className="featured-case" key={project.title}>
+                      {project.media && (
+                        <figure className="case-media">
+                          <img src={project.media.src} alt={project.media.alt} loading="lazy" />
+                          {project.media.caption && <figcaption>{project.media.caption}</figcaption>}
+                        </figure>
+                      )}
+                      <div>
+                        <p className="project-area">{project.area}</p>
+                        <h3>{project.title}</h3>
+                        <p>{project.description}</p>
+                        <dl className="project-meta">
+                          {project.question && <div><dt>Question</dt><dd>{project.question}</dd></div>}
+                          <div><dt>Methods</dt><dd>{project.methods}</dd></div>
+                        </dl>
+                        <div className="project-actions">
+                          {project.href && <a href={project.href} target="_blank" rel="noreferrer">{project.linkLabel} ↗</a>}
+                          {project.videoHref && <a href={project.videoHref} target="_blank" rel="noreferrer">{project.videoLabel} ▶</a>}
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
                 <div className="project-list">
                   {remainingProjects.map((project) => (
                     <article className="project-row" key={project.title}>
