@@ -135,20 +135,12 @@ const toolGroups = [
   ["MPI", "Slurm", "HTCondor", "Linux"],
 ];
 
-const roleTargets = [
-  "Computational scientist",
-  "Computational chemist",
-  "Molecular modeling scientist",
-  "AI/ML for science",
-  "Scientific software / digital R&D",
-];
-
 const sections: { key: SectionKey; label: string; eyebrow: string; summary: string }[] = [
   {
     key: "work",
     label: "Research Work",
     eyebrow: "Selected projects",
-    summary: "A short view of the research I would want a hiring manager to see first.",
+    summary: "Two featured studies lead the section: my Ph.D. transport work and current membrane and soft-matter research.",
   },
   {
     key: "capabilities",
@@ -208,9 +200,7 @@ export default function Home() {
             simulations, Python analysis workflows, and machine-learning models for
             transport, membranes, phase behavior, and structure-property questions.
           </p>
-          <div className="role-tags" aria-label="Target roles">
-            {roleTargets.map((role) => <span key={role}>{role}</span>)}
-          </div>
+          <p className="hero-note">Ph.D. in Computational Chemistry, now a Postdoctoral Researcher in Physics at Kansas State University.</p>
           <div className="hero-actions">
             <button className="button button-primary" type="button" onClick={() => setActiveSection("work")}>View portfolio <span>↘</span></button>
             <a className="button button-secondary" href="./Sanjeev_Gautam_Resume.pdf" target="_blank" rel="noreferrer">View resume <span>↗</span></a>
@@ -224,21 +214,6 @@ export default function Home() {
             <span><strong>HPC</strong>Workflow automation</span>
           </div>
         </aside>
-      </section>
-
-      <section className="proof-strip" aria-label="Background highlights">
-        <article>
-          <strong>Ph.D. 2025</strong>
-          <span>Computational Chemistry, University of Pittsburgh</span>
-        </article>
-        <article>
-          <strong>Postdoc</strong>
-          <span>Physics, Kansas State University</span>
-        </article>
-        <article>
-          <strong>Core fit</strong>
-          <span>MD, statistical mechanics, HPC, Python, ML</span>
-        </article>
       </section>
 
       <section className="portfolio-shell" aria-label="Portfolio sections">
@@ -261,11 +236,11 @@ export default function Home() {
         </div>
 
         <div className="portfolio-board">
-          <aside className="board-intro">
+          <div className="board-intro">
             <p className="eyebrow">{activeMeta.eyebrow}</p>
-            <h2>{activeSection === "work" ? "Start here" : activeMeta.label}</h2>
+            <h2>{activeSection === "work" ? "Featured research" : activeMeta.label}</h2>
             <p>{activeMeta.summary}</p>
-          </aside>
+          </div>
 
           <div
             aria-labelledby={`${activeSection}-tab`}
