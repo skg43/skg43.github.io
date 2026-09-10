@@ -62,10 +62,27 @@ const projects: Project[] = [
     linkLabel: "Read preprint",
   },
   {
+    area: "Intermolecular interactions",
+    title: "Thioamide hydrogen-bond acceptor study",
+    description:
+      "Studied thioamide interactions in proteins and nucleic acids using electronic-structure calculations and spectroscopy-guided interpretation.",
+    methods: "DFT, spectroscopy, structure-property analysis",
+    question: "How does thioamide substitution influence hydrogen bonding in biological molecules?",
+    media: {
+      type: "image",
+      src: "./media/thioamide-hbond-acceptor.png",
+      alt: "Molecular graphic showing thioamide hydrogen-bond acceptor interactions in a biomolecular environment",
+      caption: "Hydrogen-bonding motifs used to examine thioamide as an acceptor in proteins and nucleic acids.",
+    },
+    featured: true,
+    href: "https://doi.org/10.1021/acs.jpclett.7b01810",
+    linkLabel: "Read publication",
+  },
+  {
     area: "Cheminformatics",
     title: "EGFR inhibitor activity modeling",
     description:
-      "Built a reproducible Python/RDKit pipeline to calculate molecular features, train random-forest models, and inspect which descriptors carried useful signal.",
+      "A skills-focused reproduction project: built a Python/RDKit pipeline to calculate molecular features, train random-forest models, and inspect descriptor signal.",
     methods: "RDKit, scikit-learn, QSAR",
     href: "https://github.com/skg43/EGFR_RF_Modeling",
     linkLabel: "View code",
@@ -76,15 +93,6 @@ const projects: Project[] = [
     description:
       "Use simulation campaigns and analysis workflows to connect composition, interaction strength, morphology, and interfacial behavior.",
     methods: "Parameter sweeps, wetting, ML analysis",
-  },
-  {
-    area: "Molecular structure",
-    title: "Molecular structure and intermolecular interactions",
-    description:
-      "Used DFT and spectroscopy-guided interpretation to study hydrogen bonding, conformational preferences, and structure-property relationships.",
-    methods: "DFT, spectroscopy, electronic structure",
-    href: "https://doi.org/10.1021/acs.jpclett.7b01810",
-    linkLabel: "Read publication",
   },
 ];
 
@@ -140,7 +148,7 @@ const sections: { key: SectionKey; label: string; eyebrow: string; summary: stri
     key: "work",
     label: "Research Work",
     eyebrow: "Selected projects",
-    summary: "Two featured studies lead the section: my Ph.D. transport work and current membrane research with relevance to delivery, formulations, and soft materials.",
+    summary: "Featured studies from membranes, transport, and molecular interactions, followed by smaller additional work.",
   },
   {
     key: "capabilities",
@@ -267,6 +275,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="project-list">
+                  <p className="subsection-label">Additional work</p>
                   {remainingProjects.map((project) => (
                     <article className="project-row" key={project.title}>
                       <span>{project.area}</span>

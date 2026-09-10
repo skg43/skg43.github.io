@@ -348,6 +348,15 @@ h1 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
+  margin-top: 8px;
+}
+.subsection-label {
+  margin: 0 0 2px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 .project-row {
   display: grid;
