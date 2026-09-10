@@ -32,29 +32,26 @@ button { font: inherit; color: inherit; }
   margin: 0 auto;
   padding: 0 32px;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto auto;
   gap: 28px;
   align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid var(--line);
 }
 
 .wordmark { font-size: 24px; font-weight: 900; letter-spacing: 0; }
 .wordmark span { color: var(--rust); }
-nav { display: flex; justify-content: center; gap: 8px; }
-nav button {
-  border: 1px solid transparent;
-  background: transparent;
-  border-radius: 4px;
-  padding: 10px 12px;
-  font-size: 12px;
-  font-weight: 800;
-  cursor: pointer;
-  color: var(--muted);
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
-nav button:hover,
-nav .nav-active {
-  background: var(--surface-strong);
-  border-color: var(--line);
+.header-actions > a:not(.header-cta) {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+.header-actions > a:not(.header-cta):hover {
   color: var(--olive-dark);
 }
 
@@ -569,7 +566,6 @@ footer {
     padding: 16px 20px;
     grid-template-columns: 1fr auto;
   }
-  .site-header nav { grid-column: 1 / -1; justify-content: flex-start; overflow-x: auto; }
   .hero { padding: 48px 20px; grid-template-columns: 1fr; }
   .hero-panel { max-width: 520px; }
   .section-tabs { grid-template-columns: 1fr 1fr; }

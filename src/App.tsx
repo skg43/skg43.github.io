@@ -174,19 +174,10 @@ export default function Home() {
         <a className="wordmark" href="#top" aria-label="Sanjeev Gautam, home">
           SG<span>.</span>
         </a>
-        <nav aria-label="Primary navigation">
-          {sections.map((section) => (
-            <button
-              className={activeSection === section.key ? "nav-active" : ""}
-              key={section.key}
-              type="button"
-              onClick={() => setActiveSection(section.key)}
-            >
-              {section.label}
-            </button>
-          ))}
-        </nav>
-        <a className="header-cta" href="#contact">Let's talk</a>
+        <div className="header-actions">
+          <a href="./Sanjeev_Gautam_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a className="header-cta" href="#contact">Let's talk</a>
+        </div>
       </header>
 
       <section className="hero" id="top">
