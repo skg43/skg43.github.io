@@ -119,11 +119,11 @@ const capabilities = [
   },
   {
     label: "Soft matter and membrane systems",
-    text: "Statistical mechanics, membrane mechanics, osmotic effects, phase separation, wetting, interfacial behavior, and formulation-relevant stability questions.",
+    text: "Membrane mechanics, osmotic effects, phase separation, wetting, and interfacial behavior in systems that connect naturally to formulations, delivery, and soft-material stability.",
   },
   {
     label: "Scientific computing and ML",
-    text: "Python analysis workflows, HPC simulation campaigns, parameter sweeps, feature engineering, predictive modeling, and model interpretation for scientific datasets.",
+    text: "Python analysis workflows, HPC simulation campaigns, parameter sweeps, feature engineering, predictive modeling, and model interpretation for molecular and biological datasets.",
   },
 ];
 
@@ -140,13 +140,13 @@ const sections: { key: SectionKey; label: string; eyebrow: string; summary: stri
     key: "work",
     label: "Research Work",
     eyebrow: "Selected projects",
-    summary: "Two featured studies lead the section: my Ph.D. transport work and current membrane and soft-matter research.",
+    summary: "Two featured studies lead the section: my Ph.D. transport work and current membrane research with relevance to delivery, formulations, and soft materials.",
   },
   {
     key: "capabilities",
     label: "Technical Fit",
     eyebrow: "Capabilities",
-    summary: "The practical methods I use day to day: simulation, analysis, automation, HPC, and careful scientific interpretation.",
+    summary: "Methods I can bring to computational biology, drug discovery, formulation, biomanufacturing-adjacent R&D, and materials teams.",
   },
   {
     key: "experience",
@@ -192,13 +192,14 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <div className="status"><span />Open to computational R&D opportunities</div>
-          <p className="kicker">Computational chemistry / Molecular simulation / AI for science</p>
-          <h1>I study how molecules move, organize, and change behavior in complex systems.</h1>
+          <p className="kicker">Computational chemistry / Molecular simulation / Bio-oriented R&D</p>
+          <h1>I build molecular models for transport, membranes, and data-driven discovery.</h1>
           <p className="hero-summary">
             I am a computational scientist with a Ph.D. in computational chemistry
-            and postdoctoral work in soft matter physics. I build molecular
-            simulations, Python analysis workflows, and machine-learning models for
-            transport, membranes, phase behavior, and structure-property questions.
+            and postdoctoral work on membrane and soft-matter systems. I use
+            simulation, Python workflows, and machine learning to study problems
+            relevant to drug discovery, formulation, therapeutic delivery, and
+            materials where molecular organization controls performance.
           </p>
           <p className="hero-note">Ph.D. in Computational Chemistry, now a Postdoctoral Researcher in Physics at Kansas State University.</p>
           <div className="hero-actions">
@@ -306,7 +307,7 @@ export default function Home() {
                 <aside className="toolbox">
                   <p className="eyebrow">Methods & tools</p>
                   {toolGroups.map((group, index) => <div className="tool-row" key={index}>{group.map((tool) => <span key={tool}>{tool}</span>)}</div>)}
-                  <div className="tool-note"><strong>Industry direction</strong><p>Computational R&D roles where molecular modeling, transport, membranes, scientific computing, and AI/ML support discovery or development teams.</p></div>
+                  <div className="tool-note"><strong>Industry direction</strong><p>Computational R&D roles in biotech, biopharma, drug discovery, formulations, therapeutic delivery, scientific software, and materials-facing molecular modeling.</p></div>
                 </aside>
               </div>
             )}
@@ -340,7 +341,7 @@ export default function Home() {
       <section className="contact" id="contact">
         <p className="eyebrow">Contact</p>
         <h2>Tell me what you're curious about.</h2>
-        <p>Exploring industry roles in computational chemistry, molecular modeling, computational drug discovery, biomolecular R&D, and scientific computing.</p>
+        <p>Exploring computational roles in biotech, biopharma, drug discovery, formulation and delivery, biomolecular R&D, materials modeling, and scientific computing.</p>
         <div className="contact-actions">
           <a className="button button-light" href="mailto:sanjeev6765@gmail.com">Email me <span>↗</span></a>
           <a className="text-link" href="https://www.linkedin.com/in/sanjeev-gautam-ph-d-98126a79" target="_blank" rel="noreferrer">LinkedIn ↗</a>
