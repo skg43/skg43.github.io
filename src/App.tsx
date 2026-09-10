@@ -48,8 +48,8 @@ const projects: Project[] = [
     area: "Transport",
     title: "Transport through the nuclear pore complex",
     description:
-      "My Ph.D. work used coarse-grained molecular dynamics and trajectory-analysis tools to study diffusion, selectivity, molecular organization, and transport pathways in the nuclear pore complex.",
-    methods: "Coarse-grained MD, Python, HPC",
+      "My Ph.D. work used large-scale coarse-grained molecular dynamics and trajectory-analysis tools to study diffusion, selectivity, molecular organization, and transport pathways in the nuclear pore complex.",
+    methods: "Large-scale coarse-grained MD, Python, HPC",
     question: "How do weak interactions and spatial organization regulate selective transport?",
     media: {
       type: "image",
@@ -114,16 +114,16 @@ const publications = [
 
 const capabilities = [
   {
-    label: "Molecular simulation and transport",
-    text: "Coarse-grained and atomistic MD for biomolecular transport, diffusion, membrane systems, molecular crowding, weak interactions, and spatial organization.",
+    label: "Molecular modeling",
+    text: "Large-scale coarse-grained and atomistic simulations across biomolecular, membrane, and soft-matter systems, with emphasis on molecular interactions, diffusion, selectivity, and structure-property relationships.",
   },
   {
-    label: "Soft matter and membrane systems",
-    text: "Membrane mechanics, osmotic effects, phase separation, wetting, and interfacial behavior in systems that connect naturally to formulations, delivery, and soft-material stability.",
+    label: "Cheminformatics and predictive modeling",
+    text: "Python/RDKit workflows for molecular descriptors, fingerprints, QSAR-style modeling, feature engineering, model validation, and interpretation of chemical datasets.",
   },
   {
-    label: "Scientific computing and ML",
-    text: "Python analysis workflows, HPC simulation campaigns, parameter sweeps, feature engineering, predictive modeling, and model interpretation for molecular and biological datasets.",
+    label: "Scientific computing",
+    text: "HPC simulation campaigns, parameter sweeps, trajectory analysis, automated Python workflows, and reproducible data analysis for complex molecular systems.",
   },
 ];
 
@@ -146,7 +146,7 @@ const sections: { key: SectionKey; label: string; eyebrow: string; summary: stri
     key: "capabilities",
     label: "Technical Fit",
     eyebrow: "Capabilities",
-    summary: "Methods I can bring to computational biology, drug discovery, formulation, biomanufacturing-adjacent R&D, and materials teams.",
+    summary: "Computational modeling for molecular R&D, with strengths in simulation, transport, chemical data analysis, and predictive workflows for biotech, drug discovery, formulation, and materials problems.",
   },
   {
     key: "experience",
