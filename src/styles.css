@@ -123,6 +123,24 @@ h1 {
   font-size: 18px;
   line-height: 1.68;
 }
+.role-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 760px;
+  margin-top: 24px;
+}
+.role-tags span {
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: rgba(255, 253, 247, .78);
+  color: var(--olive-dark);
+  padding: 8px 10px;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -203,6 +221,42 @@ h1 {
   font-weight: 900;
   letter-spacing: .1em;
   text-transform: uppercase;
+}
+.focus-bar.secondary {
+  border-top: 0;
+  background: #e5eadf;
+  color: var(--olive-dark);
+}
+.focus-bar.secondary span {
+  background: rgba(255, 255, 255, .44);
+}
+
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--line);
+}
+.proof-strip article {
+  min-height: 118px;
+  padding: 26px 30px;
+  border-left: 1px solid var(--line);
+}
+.proof-strip article:last-child { border-right: 1px solid var(--line); }
+.proof-strip strong {
+  display: block;
+  color: var(--olive-dark);
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.proof-strip span {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .portfolio-shell {
@@ -326,6 +380,16 @@ h1 {
   margin: 16px 0 20px;
   color: var(--muted);
   line-height: 1.65;
+}
+.featured-case .project-impact,
+.project-row .project-impact {
+  margin-top: -4px;
+  color: var(--olive-dark);
+  font-weight: 760;
+}
+.project-row .project-impact {
+  margin-bottom: 18px;
+  font-size: 13px;
 }
 .project-list {
   display: grid;
@@ -560,7 +624,8 @@ footer {
   .hero { padding: 48px 20px; grid-template-columns: 1fr; }
   .hero-panel { max-width: 520px; }
   .focus-bar,
-  .section-tabs { grid-template-columns: 1fr 1fr; }
+  .section-tabs,
+  .proof-strip { grid-template-columns: 1fr 1fr; }
   .portfolio-shell { padding: 42px 20px 64px; }
   .board-panel,
   .board-intro { padding: 24px; }
@@ -579,7 +644,11 @@ footer {
   h1 { font-size: 42px; }
   .hero-summary { font-size: 16px; }
   .focus-bar,
-  .section-tabs { grid-template-columns: 1fr; }
+  .section-tabs,
+  .proof-strip { grid-template-columns: 1fr; }
+  .proof-strip { padding: 0 20px; }
+  .proof-strip article,
+  .proof-strip article:last-child { border-right: 1px solid var(--line); }
   .contact-actions { flex-direction: column; }
 }
 

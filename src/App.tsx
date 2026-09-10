@@ -13,6 +13,7 @@ type Project = {
   title: string;
   description: string;
   tags: string[];
+  impact?: string;
   href?: string;
   linkLabel?: string;
   media?: ProjectMedia;
@@ -28,8 +29,9 @@ const projects: Project[] = [
     eyebrow: "Molecular machine learning",
     title: "EGFR inhibitor activity modeling",
     description:
-      "Built a reproducible RDKit and scikit-learn pipeline to calculate molecular descriptors, train random-forest models, and examine structure-activity relationships in small-molecule EGFR inhibitors.",
+      "Built a reproducible Python/RDKit pipeline to generate descriptors and fingerprints, train random-forest models, and examine structure-activity relationships in small-molecule EGFR inhibitors.",
     tags: ["RDKit", "Scikit-learn", "Cheminformatics", "QSAR"],
+    impact: "Relevant to molecular property prediction, model validation, and data-driven drug discovery workflows.",
     href: "https://github.com/skg43/EGFR_RF_Modeling",
     linkLabel: "View code",
   },
@@ -37,8 +39,9 @@ const projects: Project[] = [
     eyebrow: "Molecular simulation",
     title: "Osmotic shape transitions in vesicles",
     description:
-      "Combined coarse-grained molecular dynamics and thermodynamic modeling to examine how osmotic conditions affect vesicle shape and stability, with relevance to formulation, encapsulation, and delivery-system robustness.",
+      "Combined coarse-grained molecular dynamics, solution thermodynamics, and membrane mechanics to study how osmotic conditions influence vesicle shape, stability, and morphology.",
     tags: ["Molecular dynamics", "Statistical mechanics", "LAMMPS", "HPC"],
+    impact: "Connects molecular interactions with formulation-relevant behavior in membrane and soft-matter systems.",
     media: {
       type: "image",
       src: "./media/osmotic-morphology-sequence.png",
@@ -55,15 +58,17 @@ const projects: Project[] = [
     eyebrow: "Simulation and data analysis",
     title: "Phase separation and wetting at interfaces",
     description:
-      "Using structured parameter sweeps and machine-learning analysis to identify how molecular interactions influence phase separation and wetting, with potential relevance to formulation, materials, and delivery systems.",
+      "Use simulation campaigns, parameter sweeps, and machine-learning analysis to study how composition and molecular interactions influence phase separation, wetting, and interfacial behavior.",
     tags: ["Phase separation", "Wetting", "Parameter sweeps", "Machine learning"],
+    impact: "Builds toward predictive structure-property relationships for multicomponent soft materials.",
   },
   {
     eyebrow: "Biomolecular modeling",
     title: "Transport through the nuclear pore complex",
     description:
-      "Used coarse-grained simulations and custom trajectory analysis to study selective transport through a crowded protein environment, connecting molecular interactions with transport behavior.",
+      "Developed coarse-grained molecular dynamics models and Python analysis workflows to study diffusion, selectivity, spatial organization, and transport pathways through the nuclear pore complex.",
     tags: ["Biophysics", "Coarse-grained MD", "Python", "Data analysis"],
+    impact: "A transport-phenomena problem linking molecular organization, weak interactions, and permeability-like behavior.",
     href: "https://doi.org/10.64898/2026.02.23.707554",
     linkLabel: "Read preprint",
   },
@@ -71,8 +76,9 @@ const projects: Project[] = [
     eyebrow: "Quantum chemistry and experiment",
     title: "Molecular structure and intermolecular interactions",
     description:
-      "Used DFT together with gas- and condensed-phase spectroscopy to investigate hydrogen bonding, conformational preferences, and structure-property relationships in molecular systems.",
+      "Used DFT and spectroscopy-guided interpretation to investigate hydrogen bonding, conformational preferences, intermolecular interactions, and structure-property relationships.",
     tags: ["DFT", "Spectroscopy", "Quantum chemistry", "Structure-property"],
+    impact: "Adds electronic-structure and experimental interpretation depth to my molecular modeling background.",
     href: "https://doi.org/10.1021/acs.jpclett.7b01810",
     linkLabel: "Read publication",
   },
@@ -104,37 +110,47 @@ const publications = [
 
 const capabilities = [
   {
-    label: "Physics-based modeling",
-    text: "Build molecular models to study interactions, transport, stability, phase behavior, and structure-property relationships across biomolecular and soft-material systems.",
+    label: "Molecular simulation and transport",
+    text: "Coarse-grained and atomistic MD for biomolecular transport, diffusion, membrane systems, molecular crowding, weak interactions, and spatial organization.",
   },
   {
-    label: "Scalable computational workflows",
-    text: "Automate parameter sweeps, HPC simulations, reproducible analysis, and data processing using Python, Linux, Git, and scientific-computing tools.",
+    label: "Soft matter and membrane systems",
+    text: "Statistical mechanics, membrane mechanics, osmotic effects, phase separation, wetting, interfacial behavior, and formulation-relevant stability questions.",
   },
   {
-    label: "Data-driven analysis",
-    text: "Use feature engineering, machine learning, chemical descriptors, and model interpretation to identify trends and connect simulation data with practical scientific questions.",
+    label: "Scientific computing and ML",
+    text: "Python analysis workflows, HPC simulation campaigns, parameter sweeps, feature engineering, predictive modeling, and model interpretation for scientific datasets.",
   },
 ];
 
 const toolGroups = [
-  ["LAMMPS", "GROMACS", "VMD", "MDTraj"],
-  ["Python", "NumPy", "SciPy", "Pandas", "Matplotlib"],
-  ["Scikit-learn", "RDKit", "DFT", "Linux / HPC"],
+  ["GROMACS", "OpenMM", "NAMD", "LAMMPS"],
+  ["VMD", "MDTraj", "MDAnalysis", "DFT"],
+  ["Python", "NumPy", "SciPy", "pandas"],
+  ["scikit-learn", "XGBoost", "RDKit", "C / Bash"],
+  ["MPI", "Slurm", "HTCondor", "Linux"],
+];
+
+const roleTargets = [
+  "Computational scientist",
+  "Computational chemist",
+  "Molecular modeling scientist",
+  "AI/ML for science",
+  "Scientific software / digital R&D",
 ];
 
 const sections: { key: SectionKey; label: string; eyebrow: string; summary: string }[] = [
   {
     key: "work",
-    label: "Project Portfolio",
+    label: "Research Work",
     eyebrow: "Selected work",
-    summary: "A few research projects where I used modeling, simulation, and data analysis to understand molecular systems.",
+    summary: "Projects that show how I think about transport, molecular interactions, membranes, soft matter, and predictive modeling.",
   },
   {
     key: "capabilities",
     label: "Technical Fit",
     eyebrow: "Capabilities",
-    summary: "The practical methods I use day to day: simulation, analysis, automation, and careful scientific interpretation.",
+    summary: "The practical methods I use day to day: simulation, analysis, automation, HPC, and careful scientific interpretation.",
   },
   {
     key: "experience",
@@ -180,14 +196,17 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <div className="status"><span />Open to computational R&D opportunities</div>
-          <p className="kicker">Computational chemist / Molecular modeling / Scientific ML</p>
-          <h1>I use molecular simulation and data workflows to study computational R&D problems.</h1>
+          <p className="kicker">Computational chemistry / Molecular simulation / AI for science</p>
+          <h1>I study how molecules move, organize, and change behavior in complex systems.</h1>
           <p className="hero-summary">
-            Computational chemist with experience across molecular dynamics, DFT,
-            spectroscopy-informed modeling, HPC workflows, and machine learning.
-            My work connects physical simulation with practical questions in
-            biomolecular systems, formulations, delivery, and scientific software.
+            I am a computational scientist with a Ph.D. in computational chemistry
+            and postdoctoral work in soft matter physics. I build molecular
+            simulations, Python analysis workflows, and machine-learning models for
+            transport, membranes, phase behavior, and structure-property questions.
           </p>
+          <div className="role-tags" aria-label="Target roles">
+            {roleTargets.map((role) => <span key={role}>{role}</span>)}
+          </div>
           <div className="hero-actions">
             <button className="button button-primary" type="button" onClick={() => setActiveSection("work")}>View portfolio <span>↘</span></button>
             <a className="button button-secondary" href="./Sanjeev_Gautam_Resume.pdf" target="_blank" rel="noreferrer">View resume <span>↗</span></a>
@@ -205,9 +224,31 @@ export default function Home() {
 
       <section className="focus-bar" aria-label="Professional focus">
         <span>Physics-based modeling</span>
-        <span>Data-driven analysis</span>
+        <span>Transport and diffusion</span>
+        <span>Membranes and soft matter</span>
+        <span>AI/ML for science</span>
+      </section>
+
+      <section className="proof-strip" aria-label="Background highlights">
+        <article>
+          <strong>Ph.D. 2025</strong>
+          <span>Computational Chemistry, University of Pittsburgh</span>
+        </article>
+        <article>
+          <strong>Postdoc</strong>
+          <span>Physics, Kansas State University</span>
+        </article>
+        <article>
+          <strong>Core fit</strong>
+          <span>MD, statistical mechanics, HPC, Python, ML</span>
+        </article>
+      </section>
+
+      <section className="focus-bar secondary" aria-label="Technical focus">
         <span>Workflow automation</span>
         <span>High-performance computing</span>
+        <span>Structure-property relationships</span>
+        <span>Model validation</span>
       </section>
 
       <section className="portfolio-shell" aria-label="Portfolio sections">
@@ -255,6 +296,7 @@ export default function Home() {
                     <p className="eyebrow">{featuredProject.eyebrow}</p>
                     <h3>{featuredProject.title}</h3>
                     <p>{featuredProject.description}</p>
+                    {featuredProject.impact && <p className="project-impact">{featuredProject.impact}</p>}
                     <div className="tag-list">{featuredProject.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                     <div className="project-actions">
                       {featuredProject.href && <a href={featuredProject.href} target="_blank" rel="noreferrer">{featuredProject.linkLabel} ↗</a>}
@@ -269,6 +311,7 @@ export default function Home() {
                       <div>
                         <h3>{project.href ? <a href={project.href} target="_blank" rel="noreferrer">{project.title}</a> : project.title}</h3>
                         <p>{project.description}</p>
+                        {project.impact && <p className="project-impact">{project.impact}</p>}
                         <div className="tag-list">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                       </div>
                     </article>
@@ -293,7 +336,7 @@ export default function Home() {
                 <aside className="toolbox">
                   <p className="eyebrow">Methods & tools</p>
                   {toolGroups.map((group, index) => <div className="tool-row" key={index}>{group.map((tool) => <span key={tool}>{tool}</span>)}</div>)}
-                  <div className="tool-note"><strong>Industry direction</strong><p>Computational R&D roles where molecular modeling and data support drug discovery, formulation, biomolecular research, or scientific software.</p></div>
+                  <div className="tool-note"><strong>Industry direction</strong><p>Computational R&D roles where molecular modeling, transport, membranes, scientific computing, and AI/ML support discovery or development teams.</p></div>
                 </aside>
               </div>
             )}
