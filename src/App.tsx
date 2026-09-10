@@ -27,7 +27,7 @@ type SectionKey = "work" | "capabilities" | "experience" | "publications";
 const projects: Project[] = [
   {
     area: "Membranes",
-    title: "Osmotic shape transitions in vesicles",
+    title: "Osmotic Shape Transitions In Lipid Vesicles",
     description:
       "Studied how osmotic conditions change vesicle morphology by combining coarse-grained molecular dynamics with thermodynamic and membrane-mechanics models.",
     methods: "Coarse-grained MD, LAMMPS, statistical mechanics",
@@ -46,7 +46,7 @@ const projects: Project[] = [
   },
   {
     area: "Transport",
-    title: "Transport through the nuclear pore complex",
+    title: "Transport Through The Nuclear Pore Complex",
     description:
       "My Ph.D. work used large-scale coarse-grained molecular dynamics and trajectory-analysis tools to study diffusion, selectivity, molecular organization, and transport pathways in the nuclear pore complex.",
     methods: "Large-scale coarse-grained MD, Python, HPC",
