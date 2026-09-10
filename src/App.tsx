@@ -25,13 +25,6 @@ type SectionKey = "work" | "capabilities" | "experience" | "publications";
 
 const projects: Project[] = [
   {
-    eyebrow: "Scientific computing",
-    title: "Automated simulation and analysis workflows",
-    description:
-      "Develop Python and shell-based workflows to prepare, run, monitor, and analyze molecular-simulation campaigns on HPC systems, including structured parameter sweeps and reproducible post-processing.",
-    tags: ["Python", "HPC", "Workflow automation", "Linux"],
-  },
-  {
     eyebrow: "Molecular machine learning",
     title: "EGFR inhibitor activity modeling",
     description:
@@ -135,25 +128,25 @@ const sections: { key: SectionKey; label: string; eyebrow: string; summary: stri
     key: "work",
     label: "Project Portfolio",
     eyebrow: "Selected work",
-    summary: "Case-study style summaries for simulation, scientific computing, cheminformatics, and biomolecular modeling.",
+    summary: "A few research projects where I used modeling, simulation, and data analysis to understand molecular systems.",
   },
   {
     key: "capabilities",
     label: "Technical Fit",
     eyebrow: "Capabilities",
-    summary: "A concise map of the methods, tools, and research habits I bring to computational R&D teams.",
+    summary: "The practical methods I use day to day: simulation, analysis, automation, and careful scientific interpretation.",
   },
   {
     key: "experience",
     label: "Experience",
     eyebrow: "Trajectory",
-    summary: "Research training and current work across molecular modeling, automation, and data analysis.",
+    summary: "How my training has moved through chemistry, biophysics, computation, and current postdoctoral research.",
   },
   {
     key: "publications",
     label: "Publications",
     eyebrow: "Research output",
-    summary: "Selected preprints and peer-reviewed work with direct links for deeper review.",
+    summary: "Selected papers and preprints for a closer look at the science behind the work.",
   },
 ];
 
@@ -188,7 +181,7 @@ export default function Home() {
         <div className="hero-copy">
           <div className="status"><span />Open to computational R&D opportunities</div>
           <p className="kicker">Computational chemist / Molecular modeling / Scientific ML</p>
-          <h1>Sanjeev Gautam builds molecular models and data workflows for computational R&D.</h1>
+          <h1>I use molecular simulation and data workflows to study computational R&D problems.</h1>
           <p className="hero-summary">
             Computational chemist with experience across molecular dynamics, DFT,
             spectroscopy-informed modeling, HPC workflows, and machine learning.
@@ -333,7 +326,7 @@ export default function Home() {
 
       <section className="contact" id="contact">
         <p className="eyebrow">Contact</p>
-        <h2>Let's solve a difficult scientific problem.</h2>
+        <h2>Tell me what you're curious about.</h2>
         <p>Exploring industry roles in computational chemistry, molecular modeling, computational drug discovery, biomolecular R&D, and scientific computing.</p>
         <div className="contact-actions">
           <a className="button button-light" href="mailto:sanjeev6765@gmail.com">Email me <span>↗</span></a>
