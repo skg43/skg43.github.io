@@ -9,11 +9,10 @@ type ProjectMedia = {
 };
 
 type Project = {
-  eyebrow: string;
+  area: string;
   title: string;
   description: string;
-  tags: string[];
-  impact?: string;
+  methods: string;
   href?: string;
   linkLabel?: string;
   media?: ProjectMedia;
@@ -26,22 +25,20 @@ type SectionKey = "work" | "capabilities" | "experience" | "publications";
 
 const projects: Project[] = [
   {
-    eyebrow: "Molecular machine learning",
+    area: "Cheminformatics",
     title: "EGFR inhibitor activity modeling",
     description:
-      "Built a reproducible Python/RDKit pipeline to generate descriptors and fingerprints, train random-forest models, and examine structure-activity relationships in small-molecule EGFR inhibitors.",
-    tags: ["RDKit", "Scikit-learn", "Cheminformatics", "QSAR"],
-    impact: "Relevant to molecular property prediction, model validation, and data-driven drug discovery workflows.",
+      "Built a reproducible Python/RDKit pipeline to calculate molecular features, train random-forest models, and inspect which descriptors carried useful signal.",
+    methods: "RDKit, scikit-learn, QSAR",
     href: "https://github.com/skg43/EGFR_RF_Modeling",
     linkLabel: "View code",
   },
   {
-    eyebrow: "Molecular simulation",
+    area: "Membranes",
     title: "Osmotic shape transitions in vesicles",
     description:
-      "Combined coarse-grained molecular dynamics, solution thermodynamics, and membrane mechanics to study how osmotic conditions influence vesicle shape, stability, and morphology.",
-    tags: ["Molecular dynamics", "Statistical mechanics", "LAMMPS", "HPC"],
-    impact: "Connects molecular interactions with formulation-relevant behavior in membrane and soft-matter systems.",
+      "Studied how osmotic conditions change vesicle morphology by combining coarse-grained molecular dynamics with thermodynamic and membrane-mechanics models.",
+    methods: "Coarse-grained MD, LAMMPS, statistical mechanics",
     media: {
       type: "image",
       src: "./media/osmotic-morphology-sequence.png",
@@ -55,30 +52,27 @@ const projects: Project[] = [
     videoLabel: "Watch simulation",
   },
   {
-    eyebrow: "Simulation and data analysis",
+    area: "Soft matter",
     title: "Phase separation and wetting at interfaces",
     description:
-      "Use simulation campaigns, parameter sweeps, and machine-learning analysis to study how composition and molecular interactions influence phase separation, wetting, and interfacial behavior.",
-    tags: ["Phase separation", "Wetting", "Parameter sweeps", "Machine learning"],
-    impact: "Builds toward predictive structure-property relationships for multicomponent soft materials.",
+      "Use simulation campaigns and analysis workflows to connect composition, interaction strength, morphology, and interfacial behavior.",
+    methods: "Parameter sweeps, wetting, ML analysis",
   },
   {
-    eyebrow: "Biomolecular modeling",
+    area: "Transport",
     title: "Transport through the nuclear pore complex",
     description:
-      "Developed coarse-grained molecular dynamics models and Python analysis workflows to study diffusion, selectivity, spatial organization, and transport pathways through the nuclear pore complex.",
-    tags: ["Biophysics", "Coarse-grained MD", "Python", "Data analysis"],
-    impact: "A transport-phenomena problem linking molecular organization, weak interactions, and permeability-like behavior.",
+      "Developed coarse-grained models and trajectory-analysis tools to study diffusion, selectivity, molecular organization, and transport pathways in the nuclear pore complex.",
+    methods: "Coarse-grained MD, Python, HPC",
     href: "https://doi.org/10.64898/2026.02.23.707554",
     linkLabel: "Read preprint",
   },
   {
-    eyebrow: "Quantum chemistry and experiment",
+    area: "Molecular structure",
     title: "Molecular structure and intermolecular interactions",
     description:
-      "Used DFT and spectroscopy-guided interpretation to investigate hydrogen bonding, conformational preferences, intermolecular interactions, and structure-property relationships.",
-    tags: ["DFT", "Spectroscopy", "Quantum chemistry", "Structure-property"],
-    impact: "Adds electronic-structure and experimental interpretation depth to my molecular modeling background.",
+      "Used DFT and spectroscopy-guided interpretation to study hydrogen bonding, conformational preferences, and structure-property relationships.",
+    methods: "DFT, spectroscopy, electronic structure",
     href: "https://doi.org/10.1021/acs.jpclett.7b01810",
     linkLabel: "Read publication",
   },
@@ -143,8 +137,8 @@ const sections: { key: SectionKey; label: string; eyebrow: string; summary: stri
   {
     key: "work",
     label: "Research Work",
-    eyebrow: "Selected work",
-    summary: "Projects that show how I think about transport, molecular interactions, membranes, soft matter, and predictive modeling.",
+    eyebrow: "Selected projects",
+    summary: "A short view of the research I would want a hiring manager to see first.",
   },
   {
     key: "capabilities",
@@ -222,13 +216,6 @@ export default function Home() {
         </aside>
       </section>
 
-      <section className="focus-bar" aria-label="Professional focus">
-        <span>Physics-based modeling</span>
-        <span>Transport and diffusion</span>
-        <span>Membranes and soft matter</span>
-        <span>AI/ML for science</span>
-      </section>
-
       <section className="proof-strip" aria-label="Background highlights">
         <article>
           <strong>Ph.D. 2025</strong>
@@ -242,13 +229,6 @@ export default function Home() {
           <strong>Core fit</strong>
           <span>MD, statistical mechanics, HPC, Python, ML</span>
         </article>
-      </section>
-
-      <section className="focus-bar secondary" aria-label="Technical focus">
-        <span>Workflow automation</span>
-        <span>High-performance computing</span>
-        <span>Structure-property relationships</span>
-        <span>Model validation</span>
       </section>
 
       <section className="portfolio-shell" aria-label="Portfolio sections">
@@ -273,7 +253,7 @@ export default function Home() {
         <div className="portfolio-board">
           <aside className="board-intro">
             <p className="eyebrow">{activeMeta.eyebrow}</p>
-            <h2>{activeMeta.label}</h2>
+            <h2>{activeSection === "work" ? "Start here" : activeMeta.label}</h2>
             <p>{activeMeta.summary}</p>
           </aside>
 
@@ -293,11 +273,13 @@ export default function Home() {
                     </figure>
                   )}
                   <div>
-                    <p className="eyebrow">{featuredProject.eyebrow}</p>
+                    <p className="project-area">{featuredProject.area}</p>
                     <h3>{featuredProject.title}</h3>
                     <p>{featuredProject.description}</p>
-                    {featuredProject.impact && <p className="project-impact">{featuredProject.impact}</p>}
-                    <div className="tag-list">{featuredProject.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                    <dl className="project-meta">
+                      <div><dt>Question</dt><dd>How do osmotic conditions affect membrane-vesicle shape and stability?</dd></div>
+                      <div><dt>Methods</dt><dd>{featuredProject.methods}</dd></div>
+                    </dl>
                     <div className="project-actions">
                       {featuredProject.href && <a href={featuredProject.href} target="_blank" rel="noreferrer">{featuredProject.linkLabel} ↗</a>}
                       {featuredProject.videoHref && <a href={featuredProject.videoHref} target="_blank" rel="noreferrer">{featuredProject.videoLabel} ▶</a>}
@@ -307,12 +289,11 @@ export default function Home() {
                 <div className="project-list">
                   {remainingProjects.map((project) => (
                     <article className="project-row" key={project.title}>
-                      <span>{project.eyebrow}</span>
+                      <span>{project.area}</span>
                       <div>
                         <h3>{project.href ? <a href={project.href} target="_blank" rel="noreferrer">{project.title}</a> : project.title}</h3>
                         <p>{project.description}</p>
-                        {project.impact && <p className="project-impact">{project.impact}</p>}
-                        <div className="tag-list">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                        <small>{project.methods}</small>
                       </div>
                     </article>
                   ))}
