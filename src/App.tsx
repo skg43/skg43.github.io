@@ -306,7 +306,7 @@ export default function Home() {
               <div className="timeline">
                 <article><span>2025-Now</span><div><h3>Postdoctoral Fellow</h3><p>Kansas State University / Physics</p><small>Molecular simulations, parameter sweeps, workflow automation, and machine-learning analysis for membranes, vesicles, and phase behavior.</small></div></article>
                 <article><span>Ph.D.</span><div><h3>Computational Chemistry</h3><p>University of Pittsburgh / Chemistry</p><small>Molecular simulations of biomolecular transport through the nuclear pore complex.</small></div></article>
-                <article><span>M.Sc.</span><div><h3>Integrated Chemistry</h3><p>NISER Bhubaneswar</p><small>Quantum chemistry, spectroscopy, molecular structure, and summer research experience.</small></div></article>
+                <article><span>M.Sc.</span><div><h3>Integrated MSc</h3><p>NISER Bhubaneswar</p><small>Quantum chemistry, spectroscopy, molecular structure, and summer research experience.</small></div></article>
               </div>
             )}
 
