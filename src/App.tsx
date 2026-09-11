@@ -49,7 +49,7 @@ const projects: Project[] = [
     title: "Transport Through The Nuclear Pore Complex",
     description:
       "My Ph.D. work used large-scale coarse-grained molecular dynamics and trajectory-analysis tools to study diffusion, selectivity, molecular organization, and transport pathways in the nuclear pore complex.",
-    methods: "Large-scale MD silulations, Python, HPC",
+    methods: "Large-scale MD simulations, Python, HPC",
     question: "How do weak interactions and spatial organization regulate selective transport?",
     media: {
       type: "image",
