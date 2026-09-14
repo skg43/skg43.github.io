@@ -17,13 +17,6 @@ npm run build
 npm run preview
 ```
 
-## Publish on GitHub Pages
-
-1. Create a repository named `skg43.github.io` for the clean URL `https://skg43.github.io`, or use any repository name for a project-site URL.
-2. Upload all files in this folder to the repository and push to `main`.
-3. Go to **Settings → Pages → Build and deployment** and select **GitHub Actions**.
-4. The included workflow builds and publishes the site automatically after every push to `main`.
-
 ## Main files
 
 - `src/App.tsx` — all portfolio content and sections
