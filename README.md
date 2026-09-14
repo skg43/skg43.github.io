@@ -2,9 +2,6 @@
 
 A fast, responsive portfolio for a computational chemist and molecular modeler. Built with React, TypeScript, and Vite; deployment to GitHub Pages is automated.
 
-## Before you publish
-
-Your email, LinkedIn, GitHub profile, and résumé download are already included. Confirm that the résumé is the version you want recruiters to download, then optionally add links to papers, posters, or additional project pages.
 
 ## Run locally
 
