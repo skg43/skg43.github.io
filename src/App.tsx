@@ -99,23 +99,30 @@ const projects: Project[] = [
 const publications = [
   {
     year: "2026",
+    title: "Linker stretching optimizes bonding entropy in sticker-spacer condensates",
+    authors: "S. A. Akram, J. Liu, A. Chattaraj, S. Gautam, B. Chakrabarti, E. Shakhnovich, and J. D. Schmit",
+    venue: "bioRxiv preprint · Under review",
+    href: "https://doi.org/10.64898/2026.10.09.758027",
+  },
+  {
+    year: "2026",
     title: "Osmotically Induced Shape Changes in Membrane Vesicles",
     authors: "R. G. Pereira, B. Mukherjee, S. Gautam, M. D'Agnese, S. Biswas, R. Meeker, and B. Chakrabarti",
-    venue: "bioRxiv preprint",
+    venue: "bioRxiv preprint · Under review",
     href: "https://doi.org/10.64898/2026.04.03.716363",
   },
   {
     year: "2026",
     title: "Computational Studies of Cargo Transport through the Nuclear Pore Complex",
     authors: "S. Gautam, R. Laghaei, A. Eskandari Nasrabad, and R. D. Coalson",
-    venue: "bioRxiv preprint",
+    venue: "bioRxiv preprint · Under review",
     href: "https://doi.org/10.64898/2026.02.23.707554",
   },
   {
     year: "2017",
     title: "Thioamide, a Hydrogen Bond Acceptor in Proteins and Nucleic Acids",
     authors: "V. Mundlapati, S. Gautam, D. Sahoo, A. Ghosh, and H. S. Biswal",
-    venue: "The Journal of Physical Chemistry Letters, 8, 4573-4579",
+    venue: "The Journal of Physical Chemistry Letters, 8, 4573–4579",
     href: "https://doi.org/10.1021/acs.jpclett.7b01810",
   },
 ];
